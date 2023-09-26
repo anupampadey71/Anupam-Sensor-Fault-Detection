@@ -1,8 +1,9 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /app
-
-COPY . /app
+USER root
+RUN mkdir /app
+COPY . /app/
+WORKDIR /app/
 
 RUN pip install -r requirements.txt
 
